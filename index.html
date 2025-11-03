@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purdue Portal - TECH 120</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-card: #ffffff;
+      --text-primary: #212121;
+      --text-secondary: #666666;
+      --border-color: #e0e0e0;
+      --accent-color: #CEB888;
+      --accent-hover: #B8A470;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.12);
+      --focus-ring: 0 0 0 3px rgba(206,184,136,0.4);
+      --pin-color: #f59e0b;
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #1a1a1a;
+      --bg-secondary: #2d2d2d;
+      --bg-card: #2d2d2d;
+      --text-primary: #e0e0e0;
+      --text-secondary: #b0b0b0;
+      --border-color: #404040;
+      --shadow: 0 2px 8px rgba(0,0,0,0.4);
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.6);
+    }
+
+    [data-theme="contrast"] {
+      --bg-primary: #000000;
+      --bg-secondary: #1a1a1a;
+      --bg-card: #000000;
+      --text-primary: #ffffff;
+      --text-secondary: #ffff00;
+      --border-color: #ffffff;
+      --accent-color: #ffff00;
+      --accent-hover: #ffff66;
+      --shadow: 0 2px 8px rgba(255,255,255,0.3);
+      --focus-ring: 0 0 0 4px #ffff00;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 5rem;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* ===== CONTROLS (SEARCH + THEME) ===== */
+    .controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: var(--focus-ring);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      pointer-events: none;
+    }
+
+    .theme-switcher {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .theme-btn {
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .theme-btn:hover {
+      background: var(--bg-secondary);
+      border-color: var(--accent-color);
+    }
+
+    .theme-btn:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .theme-btn.active {
+      background: var(--accent-color);
+      color: #ffffff;
+      border-color: var(--accent-color);
+    }
+
+    /* ===== FILTERS (CATEGORY CHIPS) ===== */
+    .filters {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent-color);
+      background: var(--bg-secondary);
+    }
+
+    .filter-btn:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-color);
+      color: #ffffff;
+      border-color: var(--accent-color);
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .section-badge {
+      background: var(--accent-color);
+      color: #ffffff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ===== BUNDLES (TASK RECIPES) ===== */
+    .bundles-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .bundle-card {
+      background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bundle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .bundle-card:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .bundle-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .bundle-desc {
+      font-size: 0.9rem;
+      opacity: 0.95;
+      margin-bottom: 0.75rem;
+      flex-grow: 1;
+    }
+
+    .bundle-steps {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .bundle-btn {
+      padding: 0.6rem 1rem;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 6px;
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .bundle-btn:hover {
+      background: rgba(255,255,255,0.3);
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    .bundle-btn:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    /* ===== CARDS GRID ===== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-color);
+    }
+
+    .card:focus-within {
+      border-color: var(--accent-color);
+      box-shadow: var(--focus-ring);
+    }
+
+    .card.hidden {
+      display: none;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex: 1;
+    }
+
+    .pin-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      padding: 0.25rem;
+      transition: all 0.3s;
+    }
+
+    .pin-btn:hover {
+      color: var(--pin-color);
+      transform: scale(1.2);
+    }
+
+    .pin-btn:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .pin-btn.pinned {
+      color: var(--pin-color);
+    }
+
+    .card-category {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      padding: 0.15rem 0.5rem;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .card-link {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      background: var(--accent-color);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .card-link:hover {
+      background: var(--accent-hover);
+      transform: scale(1.02);
+    }
+
+    .card-link:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .copy-btn {
+      padding: 0.6rem 1rem;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent-color);
+      color: #ffffff;
+      border-color: var(--accent-color);
+    }
+
+    .copy-btn:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .copy-btn.copied {
+      background: #4caf50;
+      color: #ffffff;
+      border-color: #4caf50;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      grid-column: 1 / -1;
+    }
+
+    /* ===== AI HELP (FAB + DRAWER) ===== */
+    .ai-fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+      border: none;
+      color: #ffffff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-hover);
+      transition: all 0.3s;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2.5s infinite;
+    }
+
+    .ai-fab:hover {
+      transform: scale(1.1);
+    }
+
+    .ai-fab:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: var(--shadow-hover); }
+      50% { box-shadow: 0 6px 28px rgba(206,184,136,0.6); }
+    }
+
+    .ai-drawer {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 420px;
+      max-width: 100%;
+      height: 600px;
+      max-height: 80vh;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ai-drawer.open {
+      transform: translateY(0);
+    }
+
+    .ai-drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem;
+      border-bottom: 2px solid var(--border-color);
+      background: var(--bg-secondary);
+    }
+
+    .ai-drawer-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .close-drawer {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text-secondary);
+      padding: 0.25rem 0.5rem;
+      line-height: 1;
+      transition: all 0.3s;
+    }
+
+    .close-drawer:hover {
+      color: var(--text-primary);
+      transform: rotate(90deg);
+    }
+
+    .close-drawer:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .ai-suggestions-bar {
+      padding: 1rem;
+      border-bottom: 2px solid var(--border-color);
+      background: var(--bg-primary);
+    }
+
+    .ai-suggestions-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .ai-suggestion-chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .ai-chip {
+      padding: 0.4rem 0.8rem;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border-color);
+      border-radius: 16px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: var(--text-primary);
+    }
+
+    .ai-chip:hover {
+      background: var(--accent-color);
+      color: #ffffff;
+      border-color: var(--accent-color);
+    }
+
+    .ai-chip:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .ai-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .ai-message {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .ai-message.user {
+      align-items: flex-end;
+    }
+
+    .ai-message.bot {
+      align-items: flex-start;
+    }
+
+    .ai-message-bubble {
+      max-width: 80%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .ai-message.user .ai-message-bubble {
+      background: var(--accent-color);
+      color: #ffffff;
+    }
+
+    .ai-message.bot .ai-message-bubble {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .ai-message-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .ai-message-link {
+      padding: 0.5rem 0.75rem;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--accent-color);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ai-message-link:hover {
+      border-color: var(--accent-color);
+      background: var(--bg-secondary);
+    }
+
+    .typing-indicator {
+      display: flex;
+      gap: 0.4rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      width: fit-content;
+    }
+
+    .typing-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--text-secondary);
+      border-radius: 50%;
+      animation: typingBounce 1.4s infinite;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-8px); }
+    }
+
+    .ai-input-container {
+      padding: 1rem;
+      border-top: 2px solid var(--border-color);
+      background: var(--bg-secondary);
+    }
+
+    .ai-input-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .ai-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .ai-input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: var(--focus-ring);
+    }
+
+    .ai-send-btn {
+      padding: 0.75rem 1.25rem;
+      background: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .ai-send-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .ai-send-btn:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .ai-send-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .controls { flex-direction: column; align-items: stretch; }
+      .theme-switcher { justify-content: center; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .bundles-container { grid-template-columns: 1fr; }
+      .ai-fab { bottom: 1rem; right: 1rem; width: 56px; height: 56px; font-size: 1.5rem; }
+      .ai-drawer { width: 100%; max-width: 100%; }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <h1>Purdue Portal</h1>
+      <p class="subtitle">Your unified hub for campus services</p>
+    </header>
+
+    <!-- CONTROLS (SEARCH + THEME) -->
+    <div class="controls">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search services, tasks, or tags... (Press / to focus)" 
+          aria-label="Search services"
+        >
+      </div>
+      <div class="theme-switcher">
+        <button class="theme-btn active" data-theme="light" tabindex="0" aria-label="Light theme">Light</button>
+        <button class="theme-btn" data-theme="dark" tabindex="0" aria-label="Dark theme">Dark</button>
+        <button class="theme-btn" data-theme="contrast" tabindex="0" aria-label="High contrast theme">High Contrast</button>
+      </div>
+    </div>
+
+    <!-- FILTERS (CATEGORY CHIPS) -->
+    <div class="filters">
+      <span class="filter-label">Categories:</span>
+      <button class="filter-btn active" data-category="all" tabindex="0" aria-label="Show all categories">All</button>
+      <button class="filter-btn" data-category="Academics" tabindex="0" aria-label="Filter by Academics">Academics</button>
+      <button class="filter-btn" data-category="Enrollment" tabindex="0" aria-label="Filter by Enrollment">Enrollment</button>
+      <button class="filter-btn" data-category="Records" tabindex="0" aria-label="Filter by Records">Records</button>
+      <button class="filter-btn" data-category="Money" tabindex="0" aria-label="Filter by Money">Money</button>
+      <button class="filter-btn" data-category="Life" tabindex="0" aria-label="Filter by Life">Life</button>
+      <button class="filter-btn" data-category="Help" tabindex="0" aria-label="Filter by Help">Help</button>
+    </div>
+
+    <!-- QUICK TASK BUNDLES -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">⚡ Quick Task Bundles</h2>
+      </div>
+      <div class="bundles-container" id="bundlesContainer"></div>
+    </div>
+
+    <!-- PINNED SECTION -->
+    <div class="section" id="pinnedSection" style="display:none;">
+      <div class="section-header">
+        <h2 class="section-title">📌 Pinned</h2>
+        <span class="section-badge" id="pinnedCount">0</span>
+      </div>
+      <div class="cards-grid" id="pinnedGrid"></div>
+    </div>
+
+    <!-- RECENT SECTION -->
+    <div class="section" id="recentSection" style="display:none;">
+      <div class="section-header">
+        <h2 class="section-title">🕒 Recent</h2>
+        <span class="section-badge" id="recentCount">0</span>
+      </div>
+      <div class="cards-grid" id="recentGrid"></div>
+    </div>
+
+    <!-- ALL SERVICES GRID -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">🔗 All Services</h2>
+        <span class="section-badge" id="allCount">0</span>
+      </div>
+      <div class="cards-grid" id="allServicesGrid"></div>
+    </div>
+  </div>
+
+  <!-- AI HELP FAB -->
+  <button class="ai-fab" id="aiFab" aria-label="Ask Boiler AI" tabindex="0">🤖</button>
+
+  <!-- AI HELP DRAWER -->
+  <div class="ai-drawer" id="aiDrawer" role="dialog" aria-labelledby="aiDrawerTitle" aria-modal="true">
+    <div class="ai-drawer-header">
+      <h3 class="ai-drawer-title" id="aiDrawerTitle">
+        <span>🤖</span>
+        <span>Ask Boiler AI</span>
+      </h3>
+      <button class="close-drawer" id="closeDrawer" aria-label="Close AI Help">&times;</button>
+    </div>
+
+    <div class="ai-suggestions-bar">
+      <div class="ai-suggestions-label">Quick suggestions:</div>
+      <div class="ai-suggestion-chips">
+        <button class="ai-chip" data-query="enrollment" tabindex="0">Course enrollment</button>
+        <button class="ai-chip" data-query="billing" tabindex="0">Pay tuition</button>
+        <button class="ai-chip" data-query="transcript" tabindex="0">Order transcript</button>
+      </div>
+    </div>
+
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-message bot">
+        <div class="ai-message-bubble">
+          Hi! I'm Boiler AI. Ask me about enrollment, billing, transcripts, exams, email, bus routes, or campus services!
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-input-container">
+      <form class="ai-input-form" id="aiInputForm">
+        <input 
+          type="text" 
+          class="ai-input" 
+          id="aiInput" 
+          placeholder="Ask a question..." 
+          aria-label="AI chat input"
+        >
+        <button type="submit" class="ai-send-btn" id="aiSendBtn" aria-label="Send message">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ===== DATA =====
+    const LINKS = {
+      // Academics
+      brightspace: { id:"brightspace", title:"Brightspace", desc:"Course pages, assignments, grades.", url:"https://purdue.brightspace.com/d2l/home", category:"Academics", tags:["course","assignments","grades"] },
+      calendars: { id:"calendars", title:"Academic Calendar", desc:"University calendars and key dates.", url:"https://www.purdue.edu/registrar/calendars/", category:"Academics", tags:["dates","deadlines"] },
+      final_exams_table: { id:"final_exams_table", title:"Final Exam Schedule (Table)", desc:"UniTime exam tables.", url:"https://roomschedule.mypurdue.purdue.edu/Timetabling/exams.do", category:"Academics", tags:["exam","schedule"] },
+      final_exams_pdf: { id:"final_exams_pdf", title:"Final Exam Schedule (PDF)", desc:"Official PDF schedule.", url:"https://www.purdue.edu/registrar/documents/currentStudents/finalExams/FinalExamSchedule.pdf", category:"Academics", tags:["exam","pdf"] },
+      
+      // Enrollment
+      add_drop: { id:"add_drop", title:"Add/Drop Deadlines", desc:"Course add/drop & pass/no pass deadlines.", url:"https://catalog.purdue.edu/content.php?catoid=17&navoid=56341", category:"Enrollment", tags:["deadline","policy","add","drop"] },
+      scheduling_guide_pdf: { id:"scheduling_guide_pdf", title:"Scheduling Assistant Guide (PDF)", desc:"Official how-to manual.", url:"https://www.purdue.edu/registrar/documents/currentStudents/scheduling/SchedulingAssistantManual.pdf", category:"Enrollment", tags:["guide","pdf"] },
+      scheduling_howto: { id:"scheduling_howto", title:"How to Add/Drop (Registrar)", desc:"Step-by-step web guide.", url:"https://www.purdue.edu/registrar/currentStudents/students/HowToAdd.html", category:"Enrollment", tags:["howto","add","drop"] },
+      
+      // Records
+      mypurdue: { id:"mypurdue", title:"myPurdue", desc:"Student portal (SSO).", url:"https://mypurdue.purdue.edu/", category:"Records", tags:["portal","sso"] },
+      onecampus: { id:"onecampus", title:"OneCampus", desc:"Campus services directory.", url:"https://one.purdue.edu/", category:"Records", tags:["directory"] },
+      transcripts_info: { id:"transcripts_info", title:"Transcripts (myPurdue e-Transcript)", desc:"Order/view via myPurdue.", url:"https://mypurdue.purdue.edu/web/myPurdue/transcript", category:"Records", tags:["records","transcript"] },
+      transcripts_parchment: { id:"transcripts_parchment", title:"Order Official Transcript (Parchment)", desc:"External vendor ordering portal.", url:"https://www.parchment.com/u/registration/26177501/account", category:"Records", tags:["official","order","transcript"] },
+      
+      // Money
+      billing_login: { id:"billing_login", title:"Billing & Payment", desc:"Touchnet payment login (SSO).", url:"https://secure.touchnet.net/C20435_tsa/web/login.jsp", category:"Money", tags:["bill","pay","payment","tuition"] },
+      bursar_info: { id:"bursar_info", title:"Bursar Office", desc:"Billing dates, policies, FAQs.", url:"https://www.purdue.edu/treasurer/finance/bursar/", category:"Money", tags:["billing","policy"] },
+      
+      // Life
+      outlook: { id:"outlook", title:"Outlook Web Mail", desc:"Access Purdue email online.", url:"https://outlook.office365.com/", category:"Life", tags:["email","outlook","mail"] },
+      office365: { id:"office365", title:"Office 365 Portal", desc:"Word, Excel, PowerPoint, OneDrive online.", url:"https://www.office.com/", category:"Life", tags:["office","documents","onedrive"] },
+      teams: { id:"teams", title:"Microsoft Teams", desc:"Collaborate, chat, video meetings.", url:"https://teams.microsoft.com/", category:"Life", tags:["teams","chat","video","meeting"] },
+      push: { id:"push", title:"PUSH (Protect Purdue Health)", desc:"Health screening & test results.", url:"https://protect.purdue.edu/", category:"Life", tags:["health","covid","screening"] },
+      caps: { id:"caps", title:"CAPS (Counseling)", desc:"Mental health & counseling services.", url:"https://www.purdue.edu/caps/", category:"Life", tags:["counseling","mental health","wellness"] },
+      recwell: { id:"recwell", title:"RecWell (Recreation)", desc:"Gym schedules, fitness classes, intramurals.", url:"https://www.purdue.edu/recwell/", category:"Life", tags:["gym","fitness","recreation"] },
+      dining: { id:"dining", title:"Dining Menus", desc:"Daily dining court menus & hours.", url:"https://dining.purdue.edu/menus/", category:"Life", tags:["food","dining","menu"] },
+      housing: { id:"housing", title:"Housing Portal", desc:"Residence hall info & StarRez portal.", url:"https://housing.purdue.edu/", category:"Life", tags:["housing","dorm","residence"] },
+      libraries: { id:"libraries", title:"Libraries Search", desc:"Catalog, databases, study spaces.", url:"https://purdue.primo.exlibrisgroup.com/", category:"Life", tags:["library","books","research"] },
+      parking: { id:"parking", title:"Parking & Transportation", desc:"Permits, lots, citations.", url:"https://www.purdue.edu/parking/", category:"Life", tags:["parking","permits","transportation"] },
+      citybus: { id:"citybus", title:"CityBus Real-Time Tracker", desc:"Live bus locations & schedules.", url:"https://www.gocitybus.com/", category:"Life", tags:["bus","transit","transportation"] },
+      transit: { id:"transit", title:"On-Demand Transit (Via)", desc:"Request rides within campus zone.", url:"https://www.purdue.edu/parking/transit/on-demand.html", category:"Life", tags:["ride","transit","via"] },
+      campusmap: { id:"campusmap", title:"Campus Map", desc:"Interactive Purdue campus map.", url:"https://www.purdue.edu/campus-map/", category:"Life", tags:["map","directions","buildings"] },
+      
+      // Help
+      it_help: { id:"it_help", title:"IT Help / Service Desk", desc:"Accounts, SSO, and tech support.", url:"https://www.it.purdue.edu/", category:"Help", tags:["support","password","it","tech"] }
+    };
+
+    const BUNDLES = [
+      {
+        id: "setup",
+        title: "Start of Term Setup",
+        desc: "Get ready for a new semester.",
+        steps: ["Check calendar", "Enroll in courses", "Set up email", "Get parking permit"],
+        links: ["calendars", "add_drop", "scheduling_howto", "outlook", "parking"]
+      },
+      {
+        id: "enrollment",
+        title: "Course Enrollment",
+        desc: "Everything you need to add, drop, or manage courses.",
+        steps: ["Review deadlines", "Read how-to guide", "Use scheduling assistant", "Check calendar"],
+        links: ["add_drop", "scheduling_howto", "scheduling_guide_pdf", "calendars"]
+      },
+      {
+        id: "money",
+        title: "Financial Tasks",
+        desc: "Pay bills, check balances, understand policies.",
+        steps: ["Log in to billing", "Review bursar info"],
+        links: ["billing_login", "bursar_info"]
+      },
+      {
+        id: "finals",
+        title: "Final Exam Prep",
+        desc: "Find your exam schedule and plan accordingly.",
+        steps: ["Check exam table", "Download PDF", "Review calendar"],
+        links: ["final_exams_table", "final_exams_pdf", "calendars"]
+      },
+      {
+        id: "transcripts",
+        title: "Order Transcripts",
+        desc: "Get official or unofficial transcripts.",
+        steps: ["View in myPurdue", "Order via Parchment"],
+        links: ["transcripts_info", "transcripts_parchment"]
+      }
+    ];
+
+    // ===== STATE =====
+    let pinnedIds = JSON.parse(localStorage.getItem('pinnedIds') || '[]');
+    let recentIds = JSON.parse(localStorage.getItem('recentIds') || '[]');
+    let currentCategory = 'all';
+    let aiMessages = [];
+    let isDrawerOpen = false;
+    let focusableElementsBeforeDrawer = [];
+
+    // ===== DOM REFERENCES =====
+    const searchInput = document.getElementById('searchInput');
+    const allServicesGrid = document.getElementById('allServicesGrid');
+    const pinnedGrid = document.getElementById('pinnedGrid');
+    const recentGrid = document.getElementById('recentGrid');
+    const pinnedSection = document.getElementById('pinnedSection');
+    const recentSection = document.getElementById('recentSection');
+    const bundlesContainer = document.getElementById('bundlesContainer');
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const aiFab = document.getElementById('aiFab');
+    const aiDrawer = document.getElementById('aiDrawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+    const aiMessagesContainer = document.getElementById('aiMessages');
+    const aiInputForm = document.getElementById('aiInputForm');
+    const aiInput = document.getElementById('aiInput');
+    const aiSendBtn = document.getElementById('aiSendBtn');
+
+    // ===== UTILITY =====
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ===== RENDER GRID =====
+    function createCard(data, showPin = true) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.dataset.id = data.id;
+      card.dataset.category = data.category;
+      card.dataset.search = `${data.title.toLowerCase()} ${data.desc.toLowerCase()} ${data.tags.join(' ').toLowerCase()}`;
+
+      const isPinned = pinnedIds.includes(data.id);
+
+      card.innerHTML = `
+        <div class="card-header">
+          <div class="card-title">${escapeHtml(data.title)}</div>
+          ${showPin ? `<button class="pin-btn ${isPinned ? 'pinned' : ''}" data-id="${data.id}" aria-label="${isPinned ? 'Unpin' : 'Pin'} ${escapeHtml(data.title)}" tabindex="0">${isPinned ? '⭐' : '☆'}</button>` : ''}
+        </div>
+        <div class="card-category">${escapeHtml(data.category)}</div>
+        <div class="card-desc">${escapeHtml(data.desc)}</div>
+        <div class="card-tags">
+          ${data.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
+        </div>
+        <div class="card-actions">
+          <a href="${escapeHtml(data.url)}" target="_blank" rel="noopener noreferrer" class="card-link" data-id="${data.id}" tabindex="0" aria-label="Visit ${escapeHtml(data.title)}">
+            Visit →
+          </a>
+          <button class="copy-btn" data-url="${escapeHtml(data.url)}" tabindex="0" aria-label="Copy link for ${escapeHtml(data.title)}">
+            Copy
+          </button>
+        </div>
+      `;
+
+      return card;
+    }
+
+    function renderCards() {
+      allServicesGrid.innerHTML = '';
+      Object.values(LINKS).forEach(data => {
+        allServicesGrid.appendChild(createCard(data));
+      });
+      updateAllCount();
+    }
+
+    function renderPinned() {
+      pinnedGrid.innerHTML = '';
+      if (pinnedIds.length === 0) {
+        pinnedSection.style.display = 'none';
+        return;
+      }
+      pinnedSection.style.display = 'block';
+      pinnedIds.forEach(id => {
+        const data = LINKS[id];
+        if (data) {
+          pinnedGrid.appendChild(createCard(data, false));
+        }
+      });
+      document.getElementById('pinnedCount').textContent = pinnedIds.length;
+    }
+
+    function renderRecent() {
+      recentGrid.innerHTML = '';
+      const uniqueRecent = [...new Set(recentIds)].slice(0, 8);
+      if (uniqueRecent.length === 0) {
+        recentSection.style.display = 'none';
+        return;
+      }
+      recentSection.style.display = 'block';
+      uniqueRecent.forEach(id => {
+        const data = LINKS[id];
+        if (data) {
+          recentGrid.appendChild(createCard(data, false));
+        }
+      });
+      document.getElementById('recentCount').textContent = uniqueRecent.length;
+    }
+
+    function updateAllCount() {
+      const visibleCards = allServicesGrid.querySelectorAll('.card:not(.hidden)');
+      document.getElementById('allCount').textContent = visibleCards.length;
+    }
+
+    // ===== RECIPES (BUNDLES) =====
+    function createBundle(bundle) {
+      const div = document.createElement('div');
+      div.className = 'bundle-card';
+      div.tabIndex = 0;
+      div.setAttribute('role', 'button');
+      div.setAttribute('aria-label', `${bundle.title}: ${bundle.desc}`);
+
+      const stepsList = bundle.steps.map((s, i) => `${i + 1}. ${s}`).join('<br>');
+
+      div.innerHTML = `
+        <div class="bundle-title">${escapeHtml(bundle.title)}</div>
+        <div class="bundle-desc">${escapeHtml(bundle.desc)}</div>
+        <div class="bundle-steps">${stepsList}</div>
+        <button class="bundle-btn" aria-label="Open all ${bundle.links.length} links for ${bundle.title}">
+          Open All (${bundle.links.length})
+        </button>
+      `;
+
+      const btn = div.querySelector('.bundle-btn');
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openBundle(bundle);
+      });
+
+      div.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openBundle(bundle);
+        }
+      });
+
+      return div;
+    }
+
+    function openBundle(bundle) {
+      bundle.links.forEach((linkId, index) => {
+        const link = LINKS[linkId];
+        if (link) {
+          setTimeout(() => {
+            window.open(link.url, '_blank', 'noopener,noreferrer');
+          }, index * 250);
+        }
+      });
+      bundle.links.forEach(id => trackRecent(id));
+    }
+
+    function renderBundles() {
+      bundlesContainer.innerHTML = '';
+      BUNDLES.forEach(bundle => {
+        bundlesContainer.appendChild(createBundle(bundle));
+      });
+    }
+
+    // ===== PIN & RECENT =====
+    function togglePin(id) {
+      const index = pinnedIds.indexOf(id);
+      if (index > -1) {
+        pinnedIds.splice(index, 1);
+      } else {
+        pinnedIds.push(id);
+      }
+      localStorage.setItem('pinnedIds', JSON.stringify(pinnedIds));
+      renderCards();
+      renderPinned();
+    }
+
+    function trackRecent(id) {
+      recentIds = [id, ...recentIds.filter(rid => rid !== id)].slice(0, 10);
+      localStorage.setItem('recentIds', JSON.stringify(recentIds));
+      renderRecent();
+    }
+
+    // ===== SEARCH =====
+    function filterCards() {
+      const query = searchInput.value.toLowerCase().trim();
+      const cards = allServicesGrid.querySelectorAll('.card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const searchText = card.dataset.search;
+        const category = card.dataset.category;
+        const matchesQuery = !query || searchText.includes(query);
+        const matchesCategory = currentCategory === 'all' || category === currentCategory;
+
+        if (matchesQuery && matchesCategory) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      updateAllCount();
+
+      const existingNoResults = allServicesGrid.querySelector('.no-results');
+      if (existingNoResults) existingNoResults.remove();
+
+      if (visibleCount === 0) {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No services found matching your criteria.';
+        allServicesGrid.appendChild(noResults);
+      }
+    }
+
+    searchInput.addEventListener('input', filterCards);
+
+    // ===== FILTERS =====
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+        currentCategory = category;
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterCards();
+      });
+    });
+
+    // ===== AI MOCK =====
+    function openAIDrawer() {
+      isDrawerOpen = true;
+      aiDrawer.classList.add('open');
+      aiFab.style.display = 'none';
+      
+      // Trap focus
+      focusableElementsBeforeDrawer = Array.from(document.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])')).filter(el => !aiDrawer.contains(el));
+      
+      setTimeout(() => aiInput.focus(), 300);
+    }
+
+    function closeAIDrawer() {
+      isDrawerOpen = false;
+      aiDrawer.classList.remove('open');
+      aiFab.style.display = 'flex';
+      aiFab.focus();
+    }
+
+    function addAIMessage(text, isUser = false, links = []) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `ai-message ${isUser ? 'user' : 'bot'}`;
+
+      let linksHtml = '';
+      if (links.length > 0) {
+        linksHtml = '<div class="ai-message-links">';
+        links.forEach(linkId => {
+          const linkData = LINKS[linkId];
+          if (linkData) {
+            linksHtml += `<a href="${escapeHtml(linkData.url)}" target="_blank" rel="noopener noreferrer" class="ai-message-link" data-id="${linkId}">
+              → ${escapeHtml(linkData.title)}
+            </a>`;
+          }
+        });
+        linksHtml += '</div>';
+      }
+
+      messageDiv.innerHTML = `
+        <div class="ai-message-bubble">${escapeHtml(text)}</div>
+        ${linksHtml}
+      `;
+
+      aiMessagesContainer.appendChild(messageDiv);
+      aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+
+      // Track clicks on AI links
+      messageDiv.querySelectorAll('.ai-message-link').forEach(link => {
+        link.addEventListener('click', () => {
+          const id = link.dataset.id;
+          if (id) trackRecent(id);
+        });
+      });
+    }
+
+    function showTypingIndicator() {
+      const indicator = document.createElement('div');
+      indicator.className = 'ai-message bot';
+      indicator.id = 'typingIndicator';
+      indicator.innerHTML = `
+        <div class="typing-indicator">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      `;
+      aiMessagesContainer.appendChild(indicator);
+      aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
+    }
+
+    function hideTypingIndicator() {
+      const indicator = document.getElementById('typingIndicator');
+      if (indicator) indicator.remove();
+    }
+
+    function getBotResponse(userQuery) {
+      const q = userQuery.toLowerCase();
+      
+      // Match keywords to bundles and links
+      if (q.includes('add') || q.includes('drop') || q.includes('enroll') || q.includes('course') || q.includes('register')) {
+        return {
+          text: "To add or drop courses, check these resources:",
+          links: ["add_drop", "scheduling_howto", "scheduling_guide_pdf", "calendars"]
+        };
+      }
+      
+      if (q.includes('bill') || q.includes('pay') || q.includes('tuition') || q.includes('money') || q.includes('payment')) {
+        return {
+          text: "For billing and payments:",
+          links: ["billing_login", "bursar_info"]
+        };
+      }
+      
+      if (q.includes('transcript')) {
+        return {
+          text: "To order transcripts:",
+          links: ["transcripts_info", "transcripts_parchment"]
+        };
+      }
+      
+      if (q.includes('exam') || q.includes('final')) {
+        return {
+          text: "For final exam schedules:",
+          links: ["final_exams_table", "final_exams_pdf", "calendars"]
+        };
+      }
+      
+      if (q.includes('email') || q.includes('outlook') || q.includes('mail')) {
+        return {
+          text: "For email and Office 365:",
+          links: ["outlook", "office365", "teams"]
+        };
+      }
+      
+      if (q.includes('bus') || q.includes('transit') || q.includes('ride') || q.includes('transportation')) {
+        return {
+          text: "For transportation options:",
+          links: ["citybus", "transit", "parking"]
+        };
+      }
+      
+      if (q.includes('password') || q.includes('login') || q.includes('account') || q.includes('tech')) {
+        return {
+          text: "For IT support and password help:",
+          links: ["it_help"]
+        };
+      }
+
+      if (q.includes('health') || q.includes('counseling') || q.includes('caps') || q.includes('push')) {
+        return {
+          text: "For health and wellness services:",
+          links: ["push", "caps"]
+        };
+      }
+
+      if (q.includes('gym') || q.includes('fitness') || q.includes('recreation')) {
+        return {
+          text: "For recreation and fitness:",
+          links: ["recwell"]
+        };
+      }
+
+      if (q.includes('food') || q.includes('dining') || q.includes('menu')) {
+        return {
+          text: "For dining information:",
+          links: ["dining"]
+        };
+      }
+
+      if (q.includes('map') || q.includes('direction') || q.includes('building')) {
+        return {
+          text: "For campus navigation:",
+          links: ["campusmap"]
+        };
+      }
+      
+      return {
+        text: "I can help with enrollment, billing, transcripts, exams, email, transportation, health services, dining, and more. Try asking about a specific topic!",
+        links: []
+      };
+    }
+
+    function handleAISubmit(e) {
+      e.preventDefault();
+      const userText = aiInput.value.trim();
+      if (!userText) return;
+
+      // Add user message
+      addAIMessage(userText, true);
+      aiInput.value = '';
+
+      // Show typing indicator
+      showTypingIndicator();
+
+      // Simulate AI response delay
+      setTimeout(() => {
+        hideTypingIndicator();
+        const response = getBotResponse(userText);
+        addAIMessage(response.text, false, response.links);
+      }, 1000);
+    }
+
+    aiInputForm.addEventListener('submit', handleAISubmit);
+
+    aiFab.addEventListener('click', openAIDrawer);
+    closeDrawer.addEventListener('click', closeAIDrawer);
+
+    // Suggestion chips
+    document.querySelectorAll('.ai-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const query = chip.dataset.query;
+        aiInput.value = chip.textContent;
+        handleAISubmit(new Event('submit'));
+      });
+    });
+
+    // ===== THEME =====
+    themeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.dataset.theme;
+        document.body.dataset.theme = theme;
+        themeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        localStorage.setItem('theme', theme);
+      });
+    });
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.dataset.theme = savedTheme;
+    themeButtons.forEach(btn => {
+      if (btn.dataset.theme === savedTheme) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // ===== A11Y (ACCESSIBILITY) =====
+    document.addEventListener('keydown', (e) => {
+      // "/" to focus search
+      if (e.key === '/' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        searchInput.focus();
+      }
+      
+      // Escape to close drawer
+      if (e.key === 'Escape' && isDrawerOpen) {
+        closeAIDrawer();
+      }
+
+      // Trap focus in drawer when open
+      if (isDrawerOpen && e.key === 'Tab') {
+        const focusableElements = aiDrawer.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])');
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    });
+
+    // Event delegation for pin, copy, visit
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('pin-btn')) {
+        const id = e.target.dataset.id;
+        togglePin(id);
+      }
+
+      if (e.target.classList.contains('copy-btn')) {
+        const url = e.target.dataset.url;
+        navigator.clipboard.writeText(url).then(() => {
+          const btn = e.target;
+          const originalText = btn.textContent;
+          btn.textContent = '✓ Copied';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.classList.remove('copied');
+          }, 2000);
+        }).catch(() => {
+          alert('Failed to copy. Please copy manually.');
+        });
+      }
+
+      if (e.target.classList.contains('card-link')) {
+        const id = e.target.dataset.id;
+        if (id) trackRecent(id);
+      }
+    });
+
+    // ===== INIT =====
+    renderBundles();
+    renderCards();
+    renderPinned();
+    renderRecent();
+  </script>
+</body>
+</html>
