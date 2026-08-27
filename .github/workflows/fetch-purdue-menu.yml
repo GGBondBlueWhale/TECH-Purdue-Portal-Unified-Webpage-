@@ -1,0 +1,111 @@
+name: Temporary Purdue Menu Fetch
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fetch-purdue-menu.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: github.event.head_commit.message == 'Run temporary Purdue menu fetch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Fetch and normalize official Purdue HFS menu data
+        run: |
+          python - <<'PY'
+          import json
+          import ssl
+          import urllib.error
+          import urllib.request
+          from datetime import datetime, timezone
+
+          requested_date = "2026-08-29"
+          locations = ["Earhart", "Ford", "Hillenbrand", "Wiley", "Windsor"]
+          result = {
+              "requested_date": requested_date,
+              "retrieved_at_utc": datetime.now(timezone.utc).isoformat(),
+              "source": "Purdue University HFS Menu API",
+              "locations": [],
+          }
+
+          for location in locations:
+              candidate_urls = [
+                  f"https://api.hfs.purdue.edu/menus/v2/locations/{location}/{requested_date}",
+                  f"https://api.hfs.purdue.edu/menus/v2/locations/{location}/08-29-2026",
+              ]
+              data = None
+              used_url = None
+              errors = []
+              for url in candidate_urls:
+                  try:
+                      request = urllib.request.Request(
+                          url,
+                          headers={
+                              "User-Agent": "Mozilla/5.0 ChatGPT Purdue menu verification",
+                              "Accept": "application/json",
+                          },
+                      )
+                      with urllib.request.urlopen(request, timeout=30, context=ssl.create_default_context()) as response:
+                          payload = response.read().decode("utf-8")
+                      candidate = json.loads(payload)
+                      if isinstance(candidate, dict) and "Meals" in candidate:
+                          data = candidate
+                          used_url = url
+                          break
+                      errors.append(f"{url}: response did not contain Meals")
+                  except Exception as exc:
+                      errors.append(f"{url}: {type(exc).__name__}: {exc}")
+
+              if data is None:
+                  raise RuntimeError(f"Unable to fetch {location}: {' | '.join(errors)}")
+
+              location_out = {
+                  "location": location,
+                  "source_url": used_url,
+                  "api_date": data.get("Date"),
+                  "api_location": data.get("Location"),
+                  "meals": [],
+              }
+              for meal in data.get("Meals", []):
+                  meal_out = {
+                      "id": meal.get("Id"),
+                      "name": meal.get("Name"),
+                      "order": meal.get("Order"),
+                      "status": meal.get("Status"),
+                      "type": meal.get("Type"),
+                      "hours": meal.get("Hours"),
+                      "stations": [],
+                  }
+                  for station in meal.get("Stations", []):
+                      station_out = {
+                          "name": station.get("Name"),
+                          "items": [],
+                      }
+                      for item in station.get("Items", []):
+                          station_out["items"].append({
+                              "id": item.get("Id"),
+                              "name": item.get("Name"),
+                              "is_vegetarian": item.get("IsVegetarian"),
+                          })
+                      meal_out["stations"].append(station_out)
+                  location_out["meals"].append(meal_out)
+              result["locations"].append(location_out)
+
+          with open("purdue_menu_2026-08-29.json", "w", encoding="utf-8") as handle:
+              json.dump(result, handle, ensure_ascii=False, indent=2)
+              handle.write("\n")
+          PY
+
+      - name: Commit fetched menu snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add purdue_menu_2026-08-29.json
+          git commit -m "Add fetched Purdue menu 2026-08-29 [skip ci]"
+          git push
