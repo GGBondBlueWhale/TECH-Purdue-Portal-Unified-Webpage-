@@ -1,0 +1,2093 @@
+{
+  "requested_date": "2026-08-29",
+  "retrieved_at_utc": "2026-08-27T04:13:50.089231+00:00",
+  "source": "Purdue University HFS Menu API",
+  "locations": [
+    {
+      "location": "Earhart",
+      "source_url": "https://api.hfs.purdue.edu/menus/v2/locations/Earhart/2026-08-29",
+      "api_date": "8/29/2026",
+      "api_location": "Earhart",
+      "meals": [
+        {
+          "id": null,
+          "name": "Breakfast",
+          "order": 0,
+          "status": "Closed",
+          "type": "Breakfast",
+          "hours": null,
+          "stations": []
+        },
+        {
+          "id": null,
+          "name": "Lunch",
+          "order": 1,
+          "status": "Open",
+          "type": "Lunch",
+          "hours": {
+            "StartTime": "11:00:00",
+            "EndTime": "14:00:00"
+          },
+          "stations": [
+            {
+              "name": "Granite Grill",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Austin Blues Pulled Pork",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Creamy Coleslaw",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sliced Red Onions",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Dill Pickle Slices",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Fried Pickles",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Jalapeno Ranch Dressing",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Heartland Classics",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Tempura Chicken",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Korean Fried Tofu Cubes",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Stir Fry Peppers and Onions",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Long Grain Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan General Tso Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Kogi Sweet Garlic Teriyaki Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Korean Stir Fry Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Zesty Orange Sauce",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "The Gallery",
+              "items": [
+                {
+                  "id": null,
+                  "name": "MYO Stir Fry",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Mini Spring Rolls",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Tempura Sweet and Sour Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Long Grain Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Fried Rice",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Totally Italian",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Build Your Own Pizza Bar",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Frank's Red Hot Buffalo Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sliced Fresh Mushrooms",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Oregano",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "The Pastry Shop",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Chocolate Chip Reeses Pieces Cookie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Brownie Swirl",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Strawberry Buttercream Filled Cake Roll",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vanilla Buttercream Filled Cake Roll",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Salad Stop",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Salad Bar",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Fresh Strawberries",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Orange Wedges",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Dark Chocolate Sea Salt Seed'nola",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Souper Deli",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Deli Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "By Request",
+              "items": [
+                {
+                  "id": null,
+                  "name": "GF Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF White Bread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Hot Dog Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan Shredded Mozzarella Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Blueberry Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Cookie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Brownie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegetarian Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Thai Curry Veggie Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Italian Ice",
+                  "is_vegetarian": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": null,
+          "name": "Dinner",
+          "order": 2,
+          "status": "Open",
+          "type": "Dinner",
+          "hours": {
+            "StartTime": "17:00:00",
+            "EndTime": "21:00:00"
+          },
+          "stations": [
+            {
+              "name": "Granite Grill",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Sliced Italian Beef w/Gravy",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Cheese Whiz",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Horseradish Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Tangy BBQ Ketchup",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sliced Red Onions",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Onion Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Creamy Coleslaw",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Dill Pickle Slices",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Crinkle Cut Fries",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Heartland Classics",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Tempura Chicken",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Korean Fried Tofu Cubes",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Stir Fry Peppers and Onions",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Long Grain Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan General Tso Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Kogi Sweet Garlic Teriyaki Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Korean Stir Fry Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Zesty Orange Sauce",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "The Gallery",
+              "items": [
+                {
+                  "id": null,
+                  "name": "MYO Stir Fry",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Mini Spring Rolls",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Tempura Sweet and Sour Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Long Grain Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Fried Rice",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Totally Italian",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Build Your Own Pizza Bar",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Frank's Red Hot Buffalo Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sliced Fresh Mushrooms",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Oregano",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "The Pastry Shop",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Chocolate Chip Reeses Pieces Cookie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Brownie Swirl",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Strawberry Buttercream Filled Cake Roll",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vanilla Buttercream Filled Cake Roll",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Salad Stop",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Salad Bar",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Fresh Strawberries",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Orange Wedges",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Dark Chocolate Sea Salt Seed'nola",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Souper Deli",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Deli Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "By Request",
+              "items": [
+                {
+                  "id": null,
+                  "name": "GF Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF White Bread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Hot Dog Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan Shredded Mozzarella Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Blueberry Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Cookie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Brownie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegetarian Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Thai Curry Veggie Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Italian Ice",
+                  "is_vegetarian": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "location": "Ford",
+      "source_url": "https://api.hfs.purdue.edu/menus/v2/locations/Ford/2026-08-29",
+      "api_date": "8/29/2026",
+      "api_location": "Ford",
+      "meals": [
+        {
+          "id": null,
+          "name": "Breakfast",
+          "order": 0,
+          "status": "Open",
+          "type": "Breakfast",
+          "hours": {
+            "StartTime": "08:00:00",
+            "EndTime": "10:00:00"
+          },
+          "stations": [
+            {
+              "name": "BoilerQ",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Scrambled Eggs",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Hard Cooked Eggs",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Potato Gems",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Texas Toast French Toast",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Pancake Syrup",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sugar Free Maple Pancake Syrup",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Powdered Sugar",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Whipped Butter",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Smokey Links",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Salami and Swiss",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Bread and Condiments",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Oatmeal and Pancake Toppers",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Pancakes",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Red Raspberries",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Mandarin Oranges",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Oatmeal",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Sugar Hill",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Assorted Donuts",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "By Request",
+              "items": [
+                {
+                  "id": null,
+                  "name": "GF White Bread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Udi's Plain GF Bagel",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Double Chocolate Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Blueberry Muffin",
+                  "is_vegetarian": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": null,
+          "name": "Lunch",
+          "order": 1,
+          "status": "Open",
+          "type": "Lunch",
+          "hours": {
+            "StartTime": "11:00:00",
+            "EndTime": "14:00:00"
+          },
+          "stations": [
+            {
+              "name": "BoilerQ",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Scrambled Eggs",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Hard Cooked Eggs",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Potato Gems",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Texas Toast French Toast",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Pancake Syrup",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sugar Free Maple Pancake Syrup",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Powdered Sugar",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Whipped Butter",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Smokey Links",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Potāto, Potäto",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Country Fried Steak",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Whipped Potatoes",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Cream Gravy",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Corn",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sweet Yeasty Rolls",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Whipped Butter",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Baked Beans",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "International Market",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Tempura Chicken",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Jasmine Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Broccoli & Carrots",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Steamed Edamame",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan General Tso Sauce",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Parmesan Tomato",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Pizza Toppers ",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Sausage Pizza",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Cheese Pizza",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Salami and Swiss",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Deli Bar",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Red Raspberries",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Mandarin Oranges",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Kettle Potato Chips",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Sugar Hill",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Sundae Bar",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Chocolate Chip Cookie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Luscious Lemon Bar",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Chocolate Cake w/ Strawberry Frosting",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Simple Servings",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Steamed Edamame",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Broccoli & Carrots",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan General Tso Sauce",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Salads",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Salad Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "By Request",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Vegetarian Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF White Bread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan Shredded Mozzarella Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Cauliflower Crust Cheese Pizza",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Double Chocolate Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Blueberry Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Italian Ice",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Brownie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Cookie",
+                  "is_vegetarian": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": null,
+          "name": "Dinner",
+          "order": 2,
+          "status": "Closed",
+          "type": "Dinner",
+          "hours": null,
+          "stations": []
+        }
+      ]
+    },
+    {
+      "location": "Hillenbrand",
+      "source_url": "https://api.hfs.purdue.edu/menus/v2/locations/Hillenbrand/2026-08-29",
+      "api_date": "8/29/2026",
+      "api_location": "Hillenbrand",
+      "meals": [
+        {
+          "id": null,
+          "name": "Brunch",
+          "order": 0,
+          "status": "Closed",
+          "type": "Unknown",
+          "hours": null,
+          "stations": []
+        },
+        {
+          "id": null,
+          "name": "Lunch",
+          "order": 1,
+          "status": "Closed",
+          "type": "Lunch",
+          "hours": null,
+          "stations": []
+        },
+        {
+          "id": null,
+          "name": "Late Lunch",
+          "order": 2,
+          "status": "Closed",
+          "type": "Snack",
+          "hours": null,
+          "stations": []
+        },
+        {
+          "id": null,
+          "name": "Dinner",
+          "order": 3,
+          "status": "Closed",
+          "type": "Dinner",
+          "hours": null,
+          "stations": []
+        }
+      ]
+    },
+    {
+      "location": "Wiley",
+      "source_url": "https://api.hfs.purdue.edu/menus/v2/locations/Wiley/2026-08-29",
+      "api_date": "8/29/2026",
+      "api_location": "Wiley",
+      "meals": [
+        {
+          "id": null,
+          "name": "Breakfast",
+          "order": 0,
+          "status": "Closed",
+          "type": "Breakfast",
+          "hours": null,
+          "stations": []
+        },
+        {
+          "id": null,
+          "name": "Lunch",
+          "order": 1,
+          "status": "Open",
+          "type": "Lunch",
+          "hours": {
+            "StartTime": "11:00:00",
+            "EndTime": "14:00:00"
+          },
+          "stations": [
+            {
+              "name": "La Fonda",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Carne Adobada",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Cilantro Green Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "5\" Flour Tortilla",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "La Fonda Station",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Queso Cheese Dip",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Romeo & Parmesan",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Rotini",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Alfredo Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Marinara Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Shredded 3 Cheese Blend",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Grated Parmesan Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Crushed Red Pepper",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Classic Flavors",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Roasted Cajun Chicken Drumsticks",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "White Cheddar Mac & Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Cornbread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Whipped Butter",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Creamy Coleslaw",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Peas",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Mozzarella Fresca",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Pepperoni Pizza",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Fresh Tastes",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Salad Bar",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Chamoy Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Mandarin Oranges",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Gluten Friendly",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Pescado A La Veracruzana (Tilapia Vcruz)",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Long Grain Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Peas",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Delectables",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Yellow Cake with Caramel Frosting",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Chocolate Pudding",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "White Chocolate Macadamia Cookie",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Vegetarian",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Vegetarian Cheesy Calabacita Bake",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Long Grain Rice",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "By Request",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Italian Ice",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "GF Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegetarian Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan Shredded Mozzarella Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF White Bread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Double Chocolate Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Blueberry Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Brownie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Cookie",
+                  "is_vegetarian": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": null,
+          "name": "Dinner",
+          "order": 2,
+          "status": "Open",
+          "type": "Dinner",
+          "hours": {
+            "StartTime": "17:00:00",
+            "EndTime": "21:00:00"
+          },
+          "stations": [
+            {
+              "name": "La Fonda",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Carne Adobada",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Cilantro Green Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "5\" Flour Tortilla",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "La Fonda Station",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Queso Cheese Dip",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Romeo & Parmesan",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Rotini",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Alfredo Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Marinara Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Shredded 3 Cheese Blend",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Grated Parmesan Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Crushed Red Pepper",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Classic Flavors",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Breaded Chicken Strips",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Marshall's Honey Mustard",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Hidden Valley Ranch Dressing",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Garlic Parmesan Wing Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sweet Chili Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Thin Cut Fries",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Garlic Roasted Green Beans",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Mozzarella Fresca",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Pepperoni Pizza",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Fresh Tastes",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Salad Bar",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Chamoy Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Mandarin Oranges",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Gluten Friendly",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Pescado A La Veracruzana (Tilapia Vcruz)",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Long Grain Rice",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Garlic Roasted Green Beans",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Delectables",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Yellow Cake with Caramel Frosting",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Chocolate Pudding",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "White Chocolate Macadamia Cookie",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Vegetarian",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Chickpea Tikka Masala",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Tandoori Naan",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Long Grain Rice",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "By Request",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Italian Ice",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "GF Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegetarian Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan Shredded Mozzarella Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF White Bread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Double Chocolate Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Blueberry Muffin",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Brownie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Cookie",
+                  "is_vegetarian": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "location": "Windsor",
+      "source_url": "https://api.hfs.purdue.edu/menus/v2/locations/Windsor/2026-08-29",
+      "api_date": "8/29/2026",
+      "api_location": "Windsor",
+      "meals": [
+        {
+          "id": null,
+          "name": "Lunch",
+          "order": 0,
+          "status": "Closed",
+          "type": "Lunch",
+          "hours": null,
+          "stations": []
+        },
+        {
+          "id": null,
+          "name": "Late Lunch",
+          "order": 1,
+          "status": "Open",
+          "type": "Snack",
+          "hours": {
+            "StartTime": "14:00:00",
+            "EndTime": "17:00:00"
+          },
+          "stations": [
+            {
+              "name": "SoHo International Market",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Mexican Chili Rellenos Squares",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sausage Links",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "French Toast Sticks",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Pancake Syrup",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Halal",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Halal Indonesian Ginger Chicken Breast",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Zesty Mediterranean Couscous",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Whole Green Beans",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Regent Grill",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Popcorn Chicken",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Hash Brown",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Chicken Gravy",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Black Bean Vegetable Fajitas",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Street Corn Queso Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Shredded Cheddar & Mont. Jack Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Chopped Green Onions",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Blueberry Syrup",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Waffle Brinner Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Portobello Road - Vegetarian",
+              "items": [
+                {
+                  "id": null,
+                  "name": "MYO Quinoa and Red Bean Burrito",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Fajita Peppers and Onions",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Spicy Tortilla Strips",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Queso Cheese Dip",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Pasta Bar",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Lasagna",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Roasted Red Pepper Alfredo Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Roasted Squash",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Pasta Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Chelsea Garden",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Orange Wedges",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Berry Blue Gelatin",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Salad Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Abby Road Deli",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Garlic Hummus",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Deli Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Devonshire Way",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Iced Cinnamon Roll",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Edible Sugar Cookie Dough",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Chocolate Candy Piece Cookie",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "By Request",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Italian Ice",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Cookie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Brownie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF White Bread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegetarian Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan Shredded Mozzarella Cheese",
+                  "is_vegetarian": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": null,
+          "name": "Dinner",
+          "order": 2,
+          "status": "Open",
+          "type": "Dinner",
+          "hours": {
+            "StartTime": "17:00:00",
+            "EndTime": "21:00:00"
+          },
+          "stations": [
+            {
+              "name": "SoHo International Market",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Mexican Chili Rellenos Squares",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Sausage Links",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "French Toast Sticks",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Pancake Syrup",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Halal",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Halal Indonesian Ginger Chicken Breast",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Zesty Mediterranean Couscous",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Whole Green Beans",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Regent Grill",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Popcorn Chicken",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Hash Brown",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Chicken Gravy",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Black Bean Vegetable Fajitas",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Street Corn Queso Cheese",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Green Onion",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Blueberry Syrup",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Waffle Brinner Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Portobello Road - Vegetarian",
+              "items": [
+                {
+                  "id": null,
+                  "name": "MYO Quinoa and Red Bean Burrito",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Fajita Peppers and Onions",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Spicy Tortilla Strips",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Queso Cheese Dip",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "Pasta Bar",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Lasagna",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Roasted Red Pepper Alfredo Sauce",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Roasted Squash",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Pasta Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Chelsea Garden",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Orange Wedges",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Berry Blue Gelatin",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Salad Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Abby Road Deli",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Garlic Hummus",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Deli Bar",
+                  "is_vegetarian": false
+                }
+              ]
+            },
+            {
+              "name": "Devonshire Way",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Iced Cinnamon Roll",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Edible Sugar Cookie Dough",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Chocolate Candy Piece Cookie",
+                  "is_vegetarian": true
+                }
+              ]
+            },
+            {
+              "name": "By Request",
+              "items": [
+                {
+                  "id": null,
+                  "name": "Italian Ice",
+                  "is_vegetarian": false
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Cookie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Homefree Chocolate Chip Brownie",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF White Bread",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "GF Hamburger Bun",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegetarian Burger",
+                  "is_vegetarian": true
+                },
+                {
+                  "id": null,
+                  "name": "Vegan Shredded Mozzarella Cheese",
+                  "is_vegetarian": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
